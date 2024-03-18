@@ -126,8 +126,8 @@
 
 
 							<div class="col-md-12">
-								<label class="form-label">Leave a Comment / Prescription</label>
-								<textarea name="comment" placeholder="Leave a comment"
+								<label class="form-label">Payment / Prescription</label>
+								<textarea name="comment" placeholder="Payment"
 									class="form-control" rows="" cols=""></textarea>
 							</div>
 							
@@ -137,15 +137,6 @@
 
 							<!-- which doctor give a comment / doctor Id -->
 							<input type="hidden" name="doctorId" value="<%= appointment.getDoctorId()%>" class="form-control">
-							
-							
-							<div class="col-md-6">
-							    <label class="form-label">Payment Status</label>
-								    <select name="paymentStatus" class="form-control">
-								        <option value="Paid">Paid</option>
-								        <option value="Not Paid">Not Paid</option>
-								    </select>
-							</div>
 
 
 							<div class="col-md-12">
