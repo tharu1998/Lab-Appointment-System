@@ -22,7 +22,8 @@
     <%@include file="navbar.jsp"%>
     <div class="container-fluid p-5 mt-4">
         <div class="row">
-            <div class="col-md-12">
+         <div class="row justify-content-center">
+            <div class="col-md-4">
                 <div class="card my-card">
                     <div class="card-body">
                         <p class="fs-3 text-center" style="color: #1C4E80;">List of Specialists</p>
@@ -36,9 +37,8 @@
                         </c:if>
                         <table class="table table-striped">
                             <thead>
-                                <tr class="table-primary">
+                                <tr class="table-primary text-center">
                                     <th scope="col">Specialist Name</th>
-                                    <th colspan="2" class="text-center" scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,18 +49,6 @@
                                 %>
                                 <tr>
                                     <td><%= specialist.getSpecialistName()%></td>
-                                    <td>
-                                        <a class="btn btn-sm btn-primary" href="edit_specialist.jsp?id=<%= specialist.getId()%>">
-                                            <i class="fas fa-pencil-alt"></i> <!-- Edit Icon -->
-                                            Edit
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-sm btn-danger" href="../deleteSpecialist?id=<%= specialist.getId() %>">
-                                            <i class="fas fa-trash-alt"></i> <!-- Delete Icon -->
-                                            Delete
-                                        </a>
-                                    </td>
                                 </tr>
                                 <% } %>
                             </tbody>
@@ -68,6 +56,7 @@
                     </div>
                 </div>
             </div>
+           </div>
         </div>
     </div>
 </body>

@@ -33,7 +33,6 @@
 <!-- customs css for this page -->
 <style type="text/css">
 body{
-	background-color: #dadada;;
     background-size: cover; /* Adjust as needed */
     background-position: center;
     margin: 0;

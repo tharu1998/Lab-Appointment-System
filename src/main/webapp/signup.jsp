@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sign up Page</title>
+<title>Signup Page</title>
 <!-- boostrap css -->
 <%@include file="component/allcss.jsp"%>
 <!-- end of boostrap css -->
@@ -24,6 +24,20 @@
 	margin-top: 40px;
 	/*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);*/
 }
+body {
+        /* Set background image for the whole body */
+        background-image: url('https://www.windsorcardiacclinic.co.uk/images/ambulatory-blood-pressure-monitor.webp');
+        /* Optional: Adjust background properties */
+        background-size: cover; /* Cover the entire viewport */
+        background-position: center; /* Center the background image */
+        background-repeat: no-repeat; /* Do not repeat the background image */
+        height: 100vh;
+        margin: 0;
+    }
+    .btn.my-bg-color:hover {
+        background: linear-gradient(90deg, #006AD5, #003A74); /* Hover background */
+        cursor: pointer; /* Change cursor to pointer */
+    }
 </style>
 <!-- end of customs css for this page -->
 
@@ -37,7 +51,7 @@
 	<div class="container p-5">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
-				<div class="card my-card">
+				<div class="card my-card" style="background-color: rgba(255, 255, 255, 0.6);">
 					<div class="card-header text-center text-white my-bg-color">
 						<!-- <p class="fs-4 text-center mt-1"><i class="fa-solid fa-users"></i> <br>User Login</p> -->
 						<p class="fs-4 text-center text-white mt-2">
@@ -48,72 +62,83 @@
 						<!-- <p class="fs-4 text-center">User Register</p> -->
 
 						<!-- message print -->
-						<!-- message print -->
+						<!-- for success msg -->
+						<c:if test="${not empty successMsg }">
+							<p class="text-center text-success fs-3">${successMsg}</p>
+							<c:remove var="successMsg" scope="session" />
+						</c:if>
+
+						<!-- for error msg -->
+						<c:if test="${not empty errorMsg }">
+							<p class="text-center text-danger fs-3">${errorMsg}</p>
+							<c:remove var="errorMsg" scope="session" />
+						</c:if>
+						<!-- End of message print -->
+
 						<!-- boostrap form -->
-						
-						<form id="registrationForm" action="user_register" method="post" onsubmit="return validateForm()">
-					    <div class="mb-3">
-					        <label class="form-label">Full Name</label> 
-					        <input name="fullName" id="fullName" type="text" placeholder="Enter full name" class="form-control" required>
-					    </div>
-					    <div class="mb-3">
-					        <label class="form-label">Email address</label> 
-					        <input name="email" id="email" type="email" placeholder="Enter Email" class="form-control" required>
-					        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-					        <div id="emailError" class="text-danger"></div> <!-- Error message container -->
-					    </div>
-					    <div class="mb-3">
-					        <label class="form-label">Password</label> 
-					        <input name="password" id="password" type="password" placeholder="Enter password" class="form-control" required>
-					    </div>
-					    <button type="submit" class="btn my-bg-color text-white col-md-12">Register</button>
+						<form name="registerForm" action="user_register" method="post" onsubmit="return validateForm()">
+							<div class="mb-3">
+								<label class="form-label">Full Name</label> <input
+									name="fullName" type="text" placeholder="Enter full name"
+									class="form-control">
+
+							</div>
+							<div class="mb-3">
+								<label class="form-label">Email address</label> <input
+									name="email" type="email" placeholder="Enter Email"
+									class="form-control">
+								<div id="emailHelp" class="form-text">We'll never share
+									your email with anyone else.</div>
+							</div>
+							<div class="mb-3">
+								<label class="form-label">Password</label> <input
+									name="password" type="password" placeholder="Enter password"
+									class="form-control">
+							</div>
+
+							<button type="submit" class="btn my-bg-color text-white col-md-12">Register</button>
 						</form>
-						
-						<script>
-						    function validateForm() {
-						        var fullName = document.getElementById("fullName").value.trim();
-						        var email = document.getElementById("email").value.trim();
-						        var password = document.getElementById("password").value.trim();
-						        
-						        // Check if fields are empty
-						        if (fullName === "" || email === "" || password === "") {
-						            alert("Please fill in all the fields.");
-						            return false;
-						        }
-						
-						        // Perform client-side email format validation
-						        var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-						        if (!emailPattern.test(email)) {
-						            alert("Please enter a valid email address.");
-						            return false;
-						        }
-						
-						        // Perform server-side email existence validation using AJAX
-						        var xhttp = new XMLHttpRequest();
-						        xhttp.onreadystatechange = function() {
-						            if (this.readyState == 4 && this.status == 200) {
-						                var response = this.responseText;
-						                if (response === "exists") {
-						                    document.getElementById("emailError").innerHTML = "Email already registered. Please use a different email.";
-						                    document.getElementById("successMsg").innerHTML = ""; // Clear success message if it's already displayed
-						                } else {
-						                    document.getElementById("emailError").innerHTML = "";
-						                    document.getElementById("successMsg").innerHTML = "Registration successful!";
-						                    document.getElementById("registrationForm").submit();
-						                }
-						            }
-						        };
-						        xhttp.open("GET", "check_email.jsp?email=" + email, true); // Replace "check_email.jsp" with your servlet/JSP URL
-						        xhttp.send();
-						
-						        return false; // Prevent form submission until email validation completes
-						    }
-						</script>
-
-
-						
 						<!-- <br>Don't have an account? <a href="#!" class="text-decoration-none">create one</a> -->
 						<!-- end of boostrap form -->
+						
+						<script>
+  function validateForm() {
+    var fullName = document.forms["registerForm"]["fullName"].value;
+    var email = document.forms["registerForm"]["email"].value;
+    var password = document.forms["registerForm"]["password"].value;
+
+    if (fullName == "") {
+      alert("Please enter your full name");
+      return false;
+    }
+
+    if (email == "") {
+      alert("Please enter your email address");
+      return false;
+    }
+
+    // Regular expression for email validation
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address");
+      return false;
+    }
+
+    if (password == "") {
+      alert("Please enter a password");
+      return false;
+    }
+
+    // Password length validation
+    if (password.length < 8) {
+      alert("Password must be at least 8 characters long");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+						
 					</div>
 				</div>
 			</div>
