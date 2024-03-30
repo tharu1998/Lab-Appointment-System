@@ -18,13 +18,12 @@
 <%@include file="../component/allcss.jsp"%>
 
 
-<!-- customs css for this page -->
 <style type="text/css">
 .my-card {
 	box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
 	margin-top: 30px;
 </style>
-<!-- end of customs css for this page -->
+
 
 </head>
 <body>
@@ -37,29 +36,20 @@
 
 	</c:if>
 
-	<!-- check is doctor is login or not -->
-
-
-	<!-- start 1st Div -->
 
 	<div class="container-fluid my-bg-img p-5">
-		<!-- css background image -->
 		<p class="text-center fs-2 text-white"></p>
 
 	</div>
 
-	<!-- end of 1st Div -->
 
 
-	<!-- 2nd Div -->
 	<div class="container p-3">
 		<p class="fs-2"></p>
 
 		<div class="row">
 
 
-
-			<!-- col-2 -->
 			<div class="col-md-6 offset-md-3">
 				<div class="card my-card">
 					<div class="card-body">
@@ -83,7 +73,6 @@
 
 
 						<%
-						/* get or receive appointment id which is coming through url (from patient.jsp page) */
 						int id = Integer.parseInt(request.getParameter("id"));
 						AppointmentDAO appDAO = new AppointmentDAO(DBConnection.getConn());
 						Appointment appointment = appDAO.getAppointmentById(id);
@@ -91,12 +80,8 @@
 						%>
 						
 						
-						
-						<!-- boostrap form -->
 						<form class="row g-3" action="../updateStatus" method="post">
 
-							<!-- take user Id in hidden field -->
-							<%-- <input type="hidden" name="userId" value="${ userObj.id }"> --%>
 
 							<div class="col-md-6">
 								<label class="form-label">Full Name</label> <input
@@ -132,10 +117,8 @@
 							</div>
 							
 
-							<!-- which appointment's comment is it / comment Id -->
 							<input type="hidden" name="id" value="<%= appointment.getId()%>" class="form-control">
 
-							<!-- which doctor give a comment / doctor Id -->
 							<input type="hidden" name="doctorId" value="<%= appointment.getDoctorId()%>" class="form-control">
 
 
@@ -146,7 +129,6 @@
 
 						</form>
 
-						<!-- end of boostrap form -->
 
 					</div>
 				</div>
@@ -158,7 +140,6 @@
 
 	</div>
 
-	<!-- 2nd Div -->
 
 </body>
 </html>

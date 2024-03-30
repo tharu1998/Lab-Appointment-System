@@ -18,26 +18,22 @@
 <title>Edit Doctor | Doctor</title>
 <%@include file="../component/allcss.jsp"%>
 
-<!-- customs css for this page -->
 <style type="text/css">
 .my-card {
 	box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
 	background-color: rgba(255, 255, 255, 0.6);
 	margin: 20px;
-	/*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);*/
 }
 body{
 	background-color: #F1F1F1;
 }
 </style>
-<!-- end of customs css for this page -->
 
 
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
 
-	<!-- if "doctorObj" is empty means no one is login. -->
 
 	<c:if test="${empty doctorObj }">
 
@@ -45,7 +41,6 @@ body{
 
 	</c:if>
 
-	<!-- check is doctor is login or not -->
 
 	<div class="container p-5 mt-4">
 		<div class="row">
@@ -118,10 +113,6 @@ body{
 						<!-- end of message -->
 
 
-						
-
-
-							<!-- boostrap form -->
 							<form action="../doctorEditProfile" method="post">
 								<div class="mb-3">
 									<label class="form-label">Full Name</label> <input

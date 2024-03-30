@@ -22,15 +22,12 @@
 
 <%@include file="../component/allcss.jsp"%>
 
-<!-- customs css for this page -->
 <style type="text/css">
 .my-card {
 	box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
 	margin-top: 30px;
-	/*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);*/
 }
 </style>
-<!-- end of customs css for this page -->
 
 </head>
 <body>
@@ -72,7 +69,6 @@
 							<th><%= appList.getFullName() %></th>
 							<td><%= appList.getGender() %></td>
 							<td><%= appList.getAge() %></td>
-							<%-- <td><%= appList.getFullName() %></td> --%>
 							<td><%= appList.getAppointmentDate()%></td>
 							<td><%= appList.getEmail()%></td>
 							<td><%= appList.getPhone()%></td>

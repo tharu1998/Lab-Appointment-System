@@ -60,11 +60,9 @@ public class SpecialistDAO {
 				
 				//create object
 				specialistObj = new Specialist();
-				//specialistObj.setId(resultSet.getInt("id"));
-				//specialistObj.setSpecialistName(resultSet.getString("specialist_name"));
-				//above two line same as below line
-				specialistObj.setId(resultSet.getInt(1));//column index number 1 -(id)
-				specialistObj.setSpecialistName(resultSet.getString(2));//column index number 2 -(specialist_name)
+
+				specialistObj.setId(resultSet.getInt(1));
+				specialistObj.setSpecialistName(resultSet.getString(2));
 				
 				//now add specialist object into List 
 				spList.add(specialistObj);

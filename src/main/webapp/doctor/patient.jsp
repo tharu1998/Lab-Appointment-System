@@ -23,20 +23,17 @@
 <%@include file="../component/allcss.jsp"%>
 
 
-<!-- customs css for this page -->
 <style type="text/css">
 .my-card {
 	box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
 	margin-top: 30px;
 </style>
-<!-- end of customs css for this page -->
 
 
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
 
-	<!-- if "doctorObj" is empty means no one is login. -->
 
 	<c:if test="${empty doctorObj }">
 
@@ -44,7 +41,6 @@
 
 	</c:if>
 
-	<!-- check is doctor is login or not -->
 
 
 	<div class="container p-5 mt-4">
@@ -67,8 +63,6 @@
 							<c:remove var="errorMsg" scope="session" />
 						</c:if>
 						<!-- End of message print -->
-
-						<!-- table for patient list -->
 
 						<table class="table table-striped">
 							<thead>
@@ -135,8 +129,6 @@
 
 							</tbody>
 						</table>
-
-						<!-- end table for doctor list -->
 
 
 

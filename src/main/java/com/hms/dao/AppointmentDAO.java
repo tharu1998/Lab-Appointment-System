@@ -50,7 +50,6 @@ public class AppointmentDAO {
 		return f;
 	}
 
-	// get list of appointment for logged in specific user 
 	//show appointment list for specific user panel
 	public List<Appointment> getAllAppointmentByLoginUser(int userId) {
 		List<Appointment> appList = new ArrayList<Appointment>();
@@ -94,7 +93,6 @@ public class AppointmentDAO {
 
 	}
 
-	// get appointment list of patient for specific doctor
 	//show list of appointment in specific doctor panel 
 	public List<Appointment> getAllAppointmentByLoginDoctor(int doctorId) {
 		List<Appointment> appList = new ArrayList<Appointment>();
@@ -114,8 +112,8 @@ public class AppointmentDAO {
 
 				appointment = new Appointment();
 
-				appointment.setId(resultSet.getInt(1));// appoint id
-				appointment.setUserId(resultSet.getInt(2));// userId
+				appointment.setId(resultSet.getInt(1));
+				appointment.setUserId(resultSet.getInt(2));
 				appointment.setFullName(resultSet.getString(3));
 				appointment.setGender(resultSet.getString(4));
 				appointment.setAge(resultSet.getString(5));
@@ -156,8 +154,8 @@ public class AppointmentDAO {
 
 				appointment = new Appointment();
 
-				appointment.setId(resultSet.getInt(1));// appoint id
-				appointment.setUserId(resultSet.getInt(2));// userId
+				appointment.setId(resultSet.getInt(1));
+				appointment.setUserId(resultSet.getInt(2));
 				appointment.setFullName(resultSet.getString(3));
 				appointment.setGender(resultSet.getString(4));
 				appointment.setAge(resultSet.getString(5));
@@ -219,8 +217,8 @@ public class AppointmentDAO {
 
 				appointment = new Appointment();
 
-				appointment.setId(resultSet.getInt(1));// appoint id
-				appointment.setUserId(resultSet.getInt(2));// userId
+				appointment.setId(resultSet.getInt(1));
+				appointment.setUserId(resultSet.getInt(2));
 				appointment.setFullName(resultSet.getString(3));
 				appointment.setGender(resultSet.getString(4));
 				appointment.setAge(resultSet.getString(5));

@@ -3,9 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<!-- for jstl tag -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- end of jstl tag -->
 
 <%@page isELIgnored="false"%>
 
@@ -20,28 +18,26 @@
 <%@include file="component/allcss.jsp"%>
 
 
-<!-- customs css for this page -->
 <style type="text/css">
 .my-card {
 	box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
-	/*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);*/
 }
 
 .carousel-item img {
   width: 100%;
-  height: 500px; /* You can adjust this height as needed */
-  object-fit: cover; /* This makes the image cover the area without distorting aspect ratio */
+  height: 500px; 
+  object-fit: cover; 
 }
 
 
 @media (max-width: 768px) {
   .carousel-item img {
-    height: 300px; /* Smaller screens get a shorter carousel */
+    height: 300px; 
   }
 }
 
 </style>
-<!-- end of customs css for this page -->
+
 
 </head>
 <body>
@@ -62,12 +58,6 @@
 				data-bs-slide-to="2" aria-label="Slide 3"></button>
 			<button type="button" data-bs-target="#carouselExampleIndicators"
 				data-bs-slide-to="3" aria-label="Slide 4"></button>
-			<!-- <button type="button" data-bs-target="#carouselExampleIndicators"
-				data-bs-slide-to="4" aria-label="Slide 5"></button>
-			<button type="button" data-bs-target="#carouselExampleIndicators"
-				data-bs-slide-to="5" aria-label="Slide 6"></button>
-			<button type="button" data-bs-target="#carouselExampleIndicators"
-				data-bs-slide-to="6" aria-label="Slide 7"></button> -->
 		</div>
 		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     	<div class="carousel-inner">
@@ -112,12 +102,10 @@
 
 
 
-	<!-- First Div Container -->
 	<div class="container p-3">
 		<p class="text-center mt-2 mb-5 fs-2 myP-color">Some key Features of our
 			Lab Appointment Portal</p>
 		<div class="row">
-			<!-- 1st col -->
 			<div class="col-md-12 p-3">
 
 				<div class="row">
@@ -167,16 +155,11 @@
 
 
 			</div>
-			<!-- End of 1st col -->
 
 		</div>
 	</div>
-	<!-- End of First Div Container -->
 
 	<hr>
-
-	<!-- Second Div Container -->
-	<!-- Second Div Container -->
 
 
 

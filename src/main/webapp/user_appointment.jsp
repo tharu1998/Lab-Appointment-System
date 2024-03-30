@@ -6,9 +6,7 @@
 	pageEncoding="UTF-8"%>
 
 
-<!-- for jstl tag -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- end of jstl tag -->
 
 <%@page isELIgnored="false"%>
 
@@ -18,58 +16,45 @@
 <head>
 <meta charset="UTF-8">
 <title>User Appointment Page</title>
-<!-- all css include -->
 <%@include file="../component/allcss.jsp"%>
 
-<!-- customs css for this page -->
 <style type="text/css">
 .my-card {
 	box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
 	background-color: rgba(255, 255, 255, 0.6);
-	/*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);*/
 }
 
-/* backgournd image css */
 
 body{
 	background-image: url("img/hospital3.jpg");
-    background-size: cover; /* Adjust as needed */
+    background-size: cover;
     background-position: center;
     margin: 0;
 }
-/* backgournd image css */
 </style>
-<!-- end of customs css for this page -->
+
 
 </head>
 <body>
 	<%@include file="component/navbar.jsp"%>
 
-	<!-- start 1st Div -->
 
 	<div class="container-fluid my-bg-img p-5">
-		<!-- css background image -->
+
 		<p class="text-center fs-2 text-white"></p>
 
 	</div>
 
-	<!-- end of 1st Div -->
-
-
-	<!-- 2nd Div -->
 
 	<div class="container p-3">
 		<p class="fs-2"></p>
 
 		<div class="row">
 			
-			<!-- col-1 -->
 			<div class="col-md-6 p-5">
-				<!-- for Background image -->
-				<!-- <img alt="" src="img/picDoc.jpg" width="500px" height="400px"> -->
+
 			</div>
 			
-			<!-- col-2 -->
 			<div class="col-md-6">
 				<div class="card my-card">
 					<div class="card-body">
@@ -90,7 +75,6 @@ body{
 						<!-- End of message print -->
 
 
-						<!-- boostrap form -->
 						<form class="row g-3" action="addAppointment" method="post">
 							
 							<!-- take user Id in hidden field -->
@@ -157,12 +141,9 @@ body{
 									}
 									%>
 									
-									<!-- <option>Doctor name</option> -->
 								</select>
 							</div>
 
-
-							<!-- below are visible to right side part of form-->
 
 							<div class="col-md-12">
 								<label class="form-label">Full Address</label>
@@ -187,7 +168,6 @@ body{
 
 						</form>
 
-						<!-- end of boostrap form -->
 
 					</div>
 				</div>
@@ -200,22 +180,6 @@ body{
 
 
 	</div>
-
-	<!-- 2nd Div -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- footer -->
 <%@include file="component/footer.jsp" %>

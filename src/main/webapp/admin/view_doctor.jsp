@@ -20,15 +20,12 @@
 <title>Doctor page</title>
 <%@include file="../component/allcss.jsp"%>
 
-<!-- customs css for this page -->
 <style type="text/css">
 .my-card {
 	box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
 	margin-top: 30px;
-	/*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);*/
 }
 </style>
-<!-- end of customs css for this page -->
 
 </head>
 <body>
@@ -57,12 +54,10 @@
 						</c:if>
 						<!-- End of message print -->
 
-						<!-- table for doctor list -->
 
 						<table class="table table-striped">
 							<thead>
 								<tr class="table-primary">
-									<!-- <th scope="col">ID</th> -->
 									<th scope="col">Full Name</th>
 									<th scope="col">DOB</th>
 									<th scope="col">Qualification</th>
@@ -80,7 +75,6 @@
 								for (Doctor doctorLst : listOfDoc) {
 								%>
 								<tr>
-									<%-- <th scope="row"><%= doctorLst.getId()%></th> --%>
 									<th><%=doctorLst.getFullName()%></th>
 									<td><%=doctorLst.getDateOfBirth()%></td>
 									<td><%=doctorLst.getQualification()%></td>
@@ -91,13 +85,13 @@
 
 									<td>
 									    <a class="btn btn-sm btn-primary" href="edit_doctor.jsp?id=<%=doctorLst.getId()%>">
-									        <i class="fas fa-pencil-alt"></i> <!-- Edit Icon -->
+									        <i class="fas fa-pencil-alt"></i>
 									        Edit
 									    </a>
 									</td>
 									<td>
 									    <a class="btn btn-sm btn-danger" href="../deleteDoctor?id=<%= doctorLst.getId() %>">
-									        <i class="fas fa-trash-alt"></i> <!-- Delete Icon -->
+									        <i class="fas fa-trash-alt"></i>
 									        Delete
 									    </a>
 									</td>
@@ -110,8 +104,6 @@
 
 							</tbody>
 						</table>
-
-						<!-- end table for doctor list -->
 
 
 					</div>

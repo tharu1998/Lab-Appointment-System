@@ -30,8 +30,6 @@ public class UpdateDoctorServlet extends HttpServlet {
 			String phone = req.getParameter("phone");
 			String password = req.getParameter("password");
 			
-			//here need to get id also...for updating the doctor details
-			//doctors will update based on respective doctor's id
 			int id = Integer.parseInt(req.getParameter("id"));
 
 			Doctor doctor = new Doctor(id, fullName, dateOfBirth, qualification, specialist, email, phone, password);

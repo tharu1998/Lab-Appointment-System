@@ -19,25 +19,19 @@
 <%@include file="../component/allcss.jsp"%>
 
 
-<!-- customs css for this page -->
 <style type="text/css">
 .my-card {
 	box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
 	background-color: rgba(255, 255, 255, 0.7);
-	/*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);*/
 }
 body {
-        /* Set background image for the whole body */
-        /*background-image: url('https://inspirage.com/wp-content/uploads/2016/09/iStock-1023224308.jpg');*/
-        /* Optional: Adjust background properties */
-        background-size: cover; /* Cover the entire viewport */
-        background-position: center; /* Center the background image */
-        background-repeat: no-repeat; /* Do not repeat the background image */
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat; 
         height: 95vh;
         margin: 0;
     }
 </style>
-<!-- end of customs css for this page -->
 
 
 
@@ -46,17 +40,11 @@ body {
 	<%@include file="navbar.jsp"%>
 
 
-	<!-- check is doctor is login or not if login then only he can access doctors dashboard -->
-	<!-- otherwise redirect him to doctor login page for log in -->
-	<!-- if "doctorObj" is empty means no one is login. -->
-
 	<c:if test="${empty doctorObj }">
 
 		<c:redirect url="../doctor_login.jsp"></c:redirect>
 
 	</c:if>
-
-	<!-- check is doctor is login or not -->
 
 
 	<div class="container p-5 mt-5">
@@ -68,7 +56,6 @@ body {
 		DoctorDAO docDAO = new DoctorDAO(DBConnection.getConn());
 		int totalNumberOfDoctor = docDAO.countTotalDoctor();
 		
-		//get current login doctor object from session
 		Doctor currentLoginDoctor = (Doctor)session.getAttribute("doctorObj");
 		
 		

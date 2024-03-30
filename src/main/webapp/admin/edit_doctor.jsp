@@ -20,15 +20,12 @@
 <title>Doctor page</title>
 <%@include file="../component/allcss.jsp"%>
 
-<!-- customs css for this page -->
 <style type="text/css">
 .my-card {
 	box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
 	margin-top: 30px;
-	/*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);*/
 }
 </style>
-<!-- end of customs css for this page -->
 
 </head>
 <body>
@@ -54,21 +51,14 @@
 							<p class="text-center text-danger fs-3">${errorMsg}</p>
 							<c:remove var="errorMsg" scope="session" />
 						</c:if>
-						<!-- End of message print -->
 
 
 
 						<%
-						//get specific doctor id with the help of request.getParameter() 
-						//which is coming from url for doctor editing(which i pass through url when press edit doctor)...
-						int id = Integer.parseInt(request.getParameter("id")); //this "id" is prefix name in URL
+						int id = Integer.parseInt(request.getParameter("id"));
 						DoctorDAO docDAO = new DoctorDAO(DBConnection.getConn());
-						Doctor doctor = docDAO.getDoctorById(id);//call getDoctorById(id) which return doctor of specific id
+						Doctor doctor = docDAO.getDoctorById(id);
 						%>
-
-						<!-- boostrap form -->
-						
-						<!-- doctors details form with specific id's doctors submitted data/details with editable field -->
 						
 						<form action="../updateDoctor" method="post">
 							<div class="row mb-3">
@@ -144,9 +134,6 @@
 
 							<button type="submit" class="btn btn-danger text-white col-md-12">Update</button>
 						</form>
-						<!-- <br>Don't have an account? <a href="#!"
-							class="text-decoration-none">create one</a> -->
-						<!-- end of boostrap form -->
 
 					</div>
 

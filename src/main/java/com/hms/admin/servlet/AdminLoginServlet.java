@@ -28,9 +28,6 @@ public class AdminLoginServlet extends HttpServlet {
 			//logic for a static Admin
 			if ("admin@gmail.com".equals(email) && "admin".equals(password)) {
 				
-				//if "adminObj" obj available then give the access of admin page, 
-				//otherwise "adminObj" is not present in obj then others user is login(which is not admin). so dont give him the access of Admin.
-				//the below line specially check the admin is log in or not! "adminObj" object is available that means admin is log in.
 				session.setAttribute("adminObj", new User());
 				resp.sendRedirect("admin/index.jsp");
 			}

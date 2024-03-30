@@ -30,7 +30,7 @@ public class UserDAO {
 
 			pstmt.executeUpdate();
 
-			f = true; // if query execute successfully then f becomes true otherwise false...
+			f = true;
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -40,12 +40,6 @@ public class UserDAO {
 		return f;
 	}
 
-	// when call loginUser() method, it checks that particular user available or
-	// not?
-	// if not available then return null user object.
-	// and if particular user available then, create User object(i.e user) and fetch
-	// all the data of that user from db
-	// and return that specific users object.
 	public User loginUser(String email, String password) {
 
 		User user = null;
@@ -59,16 +53,10 @@ public class UserDAO {
 
 			ResultSet resultSet = pstmt.executeQuery();
 			while (resultSet.next()) {
-				// if any row available, then fetch the data of that row...
 
 				// create new user object
 				user = new User();
 
-				// fetch data one by one from db table and set it/bind it to user's objects.
-				// e.g fetch id and set to user object
-				// user.setId(resultSet.getInt(1));or below line both are same
-				// (1) means db table colm index number 1 which is id
-				// getString() takes both column indexNumber or columnLabel name...
 				user.setId(resultSet.getInt("id"));
 				user.setFullName(resultSet.getString("full_name"));
 				user.setEmail(resultSet.getString("email"));
@@ -97,7 +85,6 @@ public class UserDAO {
 			pstmt.setString(2, oldPassword);
 
 			ResultSet resultSet = pstmt.executeQuery();
-			//System.out.println(resultSet);
 			while (resultSet.next()) {
 				f = true;
 			}

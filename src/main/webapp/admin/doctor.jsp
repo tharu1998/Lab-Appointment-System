@@ -20,15 +20,12 @@
 <title>Doctor page</title>
 <%@include file="../component/allcss.jsp"%>
 
-<!-- customs css for this page -->
 <style type="text/css">
 .my-card {
 	box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
 	margin-top: 30px;
-	/*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);*/
 }
 </style>
-<!-- end of customs css for this page -->
 
 </head>
 <body>
@@ -56,7 +53,6 @@
 						</c:if>
 						<!-- End of message print -->
 
-						<!-- boostrap form -->
 						<form action="../addDoctor" method="post">
 							<div class="row mb-3">
 							<div class="col-md-6">
@@ -118,9 +114,6 @@
 
 							<button type="submit" class="btn btn-success text-white col-md-12">Register</button>
 						</form>
-						<!-- <br>Don't have an account? <a href="#!"
-							class="text-decoration-none">create one</a> -->
-						<!-- end of boostrap form -->
 
 					</div>
 
@@ -129,14 +122,6 @@
 			
 		</div>
 	</div>
-
-
-
-
-
-
-
-
 
 </body>
 </html>

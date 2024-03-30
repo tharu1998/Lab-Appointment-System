@@ -19,34 +19,26 @@
 
 
 
-<!-- customs css for this page -->
 <style type="text/css">
 .my-card {
 	box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
 	background-color: rgba(255, 255, 255, 0.7);
-	/*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);*/
 }
 body {
-        /* Set background image for the whole body */
-        /*background-image: url('https://inspirage.com/wp-content/uploads/2016/09/iStock-1023224308.jpg');*/
-        /* Optional: Adjust background properties */
-        background-size: cover; /* Cover the entire viewport */
-        background-position: center; /* Center the background image */
-        background-repeat: no-repeat; /* Do not repeat the background image */
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat; 
         height: 95vh;
         margin: 0;
     }
 
 </style>
-<!-- end of customs css for this page -->
 
 
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
 
-	<!-- adminObj session maintain if "adminObj" empty than go and login first...-->
-	<!-- no one can access admin dashboard without login as admin-->
 	<c:if test="${empty adminObj }">
 		<c:redirect url="../admin_login.jsp"></c:redirect>
 	</c:if>
@@ -70,7 +62,6 @@ body {
 		</c:if>
 		<!-- End of message print -->
 
-		<!-- create connection with db and others -->
 		<% 
 		DoctorDAO docDAO = new DoctorDAO(DBConnection.getConn());
 		int totalNumberOfDoctor = docDAO.countTotalDoctor();
@@ -79,7 +70,6 @@ body {
 		int totalNumberOfSpecialist = docDAO.countTotalSpecialist();
 		%>
 
-		<!-- row-1 -->
 		<div class="row">
 			<div class="col-md-4">
 				<div class="card my-card">
@@ -134,10 +124,6 @@ body {
 
 
 
-	<!-- specialis modal -->
-
-
-
 	<!-- Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -173,8 +159,6 @@ body {
 			</div>
 		</div>
 	</div>
-
-	<!-- end of specialis modal -->
 
 
 
